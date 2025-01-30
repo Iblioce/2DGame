@@ -1,3 +1,5 @@
+package Map;
+
 import Entities.Entity;
 import Entities.Hero;
 
@@ -34,6 +36,7 @@ public class Map {
     }
 
     public void update() {
+
         for (Entity entity : entities) {
             entity.move();
         }

@@ -1,3 +1,5 @@
+package GameLoop;
+
 public class FPSController {
     private final int targetFPS;
     private final int frameTime;

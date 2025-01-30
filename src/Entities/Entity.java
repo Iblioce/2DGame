@@ -13,6 +13,17 @@ public abstract class Entity {
 
     public abstract void move();
 
+    public boolean collidesWith(Entity other) {
+        if(this.x < other.x + other.width &&
+                this.x + this.width > other.x &&
+                this.y < other.y + other.height &&
+                this.y + this.height > other.y)
+        {
+            return true;
+        }
+        else return false;
+    }
+
     public int getX() { return x; }
     public int getY() { return y; }
     public int getWidth() { return width; }
