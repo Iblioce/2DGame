@@ -4,6 +4,7 @@ import Entities.Enemy;
 import Entities.Entity;
 import Entities.Hero;
 import Map.Map;
+import Map.Floor;
 import Visual.GameWindow;
 
 import java.awt.*;
@@ -18,8 +19,11 @@ public class GamePlay implements GameLoop {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = (int) screenSize.getWidth();
         int screenHeight = (int) screenSize.getHeight();
+        this.gameMap = new Map(screenWidth, screenHeight);
         this.hero = new Hero(screenWidth/10,screenHeight/2,10,50);
-        this.gameMap = new Map(screenWidth, screenHeight,this.hero);
+        this.gameMap.setHero(hero);
+        Floor floor = new Floor(screenHeight/10,screenWidth);
+        this.gameMap.setFloor(floor);
 
         this.window = new GameWindow(gameMap);
         FPSController fpsController = new FPSController(60);

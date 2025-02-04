@@ -11,8 +11,9 @@ public class Map {
     private int height;
     private List<Entity> entities;
     private Hero hero;
+    private Floor floor;
 
-    public Map(int width, int height, Hero hero) {
+    public Map(int width, int height) {
         this.width = width;
         this.height = height;
         this.entities = new ArrayList<>();
@@ -39,6 +40,7 @@ public class Map {
 
         for (Entity entity : entities) {
             entity.move();
+
         }
     }
 
@@ -63,5 +65,13 @@ public class Map {
 
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
+    }
+
+    public void setFloor(Floor floor) {
+        this.floor = floor;
+    }
+
+    public Floor getFloor() {
+        return floor;
     }
 }
