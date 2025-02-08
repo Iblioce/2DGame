@@ -1,8 +1,8 @@
 package Entities;
 
 public abstract class Entity {
-    private int x, y;
-    private int width, height;
+    protected int x, y;
+    protected int width, height;
 
     public Entity(int x, int y, int width, int height) {
         this.x = x;

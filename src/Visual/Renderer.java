@@ -19,7 +19,7 @@ public class Renderer  {
     public Renderer(){
         try {
             heroImage = ImageIO.read(new File("res/images/hero.png"));
-            ennemyImage = ImageIO.read(new File("res/images/ennemy.png"));
+            ennemyImage = ImageIO.read(new File("res/images/enemy.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
