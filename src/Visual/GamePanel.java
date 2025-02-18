@@ -11,9 +11,11 @@ import java.util.List;
 
 public class GamePanel extends JPanel {
     private Map gameMap;
+    private Renderer renderer;
 
     public GamePanel(Map gameMap) {
         this.gameMap = gameMap;
+        this.renderer = new Renderer();
         this.setDoubleBuffered(true);
 
     }
@@ -28,13 +30,7 @@ public class GamePanel extends JPanel {
         Hero hero = gameMap.getHero();
         List<Entity> entities = gameMap.getEntities();
 
-        g.drawImage(hero.getHeroImage(), hero.getX(), hero.getY(), hero.getWidth(), hero.getHeight(), null);
+        renderer.renderGamePlay(g, hero, entities,gameMap.getWidth(),gameMap.getHeight());
 
-        g.setColor(Color.BLACK);
-        for (Entity entity : entities) {
-            if (entity instanceof Enemy enemy) {
-                g.drawImage(enemy.getEnemyImage(), enemy.getX(), enemy.getY(), enemy.getWidth(), enemy.getHeight(), null);
-            }
-        }
     }
 }

@@ -14,14 +14,10 @@ public class HeroKeyListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            hero.jump();
-        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 
     @Override

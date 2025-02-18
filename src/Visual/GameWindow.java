@@ -2,6 +2,7 @@ package Visual;
 
 import Map.Map;
 import PlayerAction.HeroKeyListener;
+import PlayerAction.HeroMouseListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,16 +15,17 @@ public class GameWindow extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(gameMap.getWidth(), gameMap.getHeight());
         this.setResizable(true);
+        this.setBackground(Color.black);
 
         this.gamePanel = new GamePanel(gameMap);
         this.add(gamePanel);
 
-        this.addKeyListener(new HeroKeyListener(gameMap.getHero()));
+        this.addMouseListener(new HeroMouseListener(gameMap.getHero()));
 
         this.setVisible(true);
     }
 
     public void refresh() {
-        gamePanel.repaint();  // Rafraîchit proprement l'affichage
+        gamePanel.repaint();
     }
 }
