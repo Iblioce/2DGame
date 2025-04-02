@@ -11,7 +11,7 @@ This is a survival-based game where your objective is to last as long as possibl
 
 ## What's Next?
 
-- Adding different enemy types with unique behaviors.
+- Adding different Enemies types with unique behaviors.
 - Implementing power-ups and upgrades to enhance gameplay.
 - Introducing a scoring system and leaderboards.
 - Improving animations and visual effects.

@@ -1,7 +1,7 @@
 package Visual;
 
 import Entities.Arrow;
-import Entities.Enemy;
+import Entities.BasicEnemy;
 import Entities.Entity;
 import Entities.Hero;
 
@@ -15,18 +15,16 @@ import java.util.List;
 
 public class Renderer  {
     private BufferedImage heroImage;
-    private BufferedImage ennemyImage;
+    private BufferedImage basicEnemyImage;
     private BufferedImage arrowImage;
     private BufferedImage backgroundImage;
 
     public Renderer(){
         try {
             heroImage = ImageIO.read(new File("res/images/hero.png"));
-            ennemyImage = ImageIO.read(new File("res/images/enemy.png"));
+            basicEnemyImage = ImageIO.read(new File("res/images/basicEnemy.png"));
             arrowImage = ImageIO.read((new File("res/images/arrow.png")));
             backgroundImage = ImageIO.read(new File("res/images/background0.png"));
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,14 +46,14 @@ public class Renderer  {
 
         // Render enemies
         for (Entity entity : entities) {
-            if (entity instanceof Enemy) {
-                renderEnemy(g, (Enemy) entity);
+            if (entity instanceof BasicEnemy) {
+                renderBasicEnemy(g, (BasicEnemy) entity);
             }
         }
     }
 
-    private void renderEnemy(Graphics g, Enemy enemy) {
+    private void renderBasicEnemy(Graphics g, BasicEnemy basicEnemy) {
         g.setColor(java.awt.Color.RED);
-        g.drawImage(ennemyImage,enemy.getX(),enemy.getY(),null);
+        g.drawImage(basicEnemyImage, basicEnemy.getX(), basicEnemy.getY(),null);
     }
 }

@@ -10,7 +10,8 @@ import java.util.ArrayList;
 public class Hero extends Entity {
     private Image heroImage;
     private List<Arrow> arrows = new ArrayList<>();
-    private int shotCD = 0 ;
+    private double shotCD = 0 ;
+    private int health = 3;
 
     public Hero(int x, int y, int width, int height) {
         super(x, y, width, height);
@@ -43,19 +44,29 @@ public class Hero extends Entity {
 
     public Image getHeroImage() {
         return heroImage;
-
     }
 
-    public int getShotCD() {
+    public double getShotCD() {
         return shotCD;
     }
 
-    public void setShotCD(int shotCD) {
+    public void setShotCD(double shotCD) {
         this.shotCD = shotCD;
     }
     public void reduceCooldown() {
         if (shotCD > 0) {
             shotCD--;
         }
+    }
+    public void setStunned(double sec){
+        this.setShotCD(this.getShotCD()+sec*60);
+    }
+
+    public void loseHealth(){
+        this.health--;
+    }
+    
+    public int gethealth(){
+        return this.health;
     }
 }

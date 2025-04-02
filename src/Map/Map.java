@@ -1,10 +1,12 @@
 package Map;
 
 import Entities.Entity;
+import Entities.EntitySpawner;
 import Entities.Hero;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Map {
     private int width;
@@ -12,6 +14,7 @@ public class Map {
     private List<Entity> entities;
     private Hero hero;
     private Floor floor;
+    private EntitySpawner entitySpawner;
 
     public Map(int width, int height) {
         this.width = width;
@@ -21,7 +24,17 @@ public class Map {
     }
 
     public void addEntity(Entity entity) {
-        entities.add(entity);
+        this.entities.add(entity);
+    }
+
+    public void spawn(String name){
+        Random seed = new Random();
+        int ran = seed.nextInt(8)+2;
+        Entity entity = EntitySpawner.getEntity(name);
+        entity.setX(this.getWidth() * 9 / 10);
+        entity.setY(this.getHeight() / ran);
+        this.addEntity(entity);
+
     }
 
     public Hero getHero() {
@@ -47,6 +60,7 @@ public class Map {
     public List<Entity> getEntities() {
         return entities;
     }
+
     public int getHeight() {
         return height;
     }

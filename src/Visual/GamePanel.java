@@ -1,6 +1,5 @@
 package Visual;
 
-import Entities.Enemy;
 import Entities.Entity;
 import Entities.Hero;
 import Map.Map;
