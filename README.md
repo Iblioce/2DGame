@@ -1,4 +1,5 @@
 # 2DGame
+## ⚠ **Note: This project does not strictly follow the MVC pattern.**
 
 ## Description
 This is a survival-based game where your objective is to last as long as possible. To survive, you must prevent enemies from getting past you.
@@ -16,5 +17,3 @@ This is a survival-based game where your objective is to last as long as possibl
 - Introducing a scoring system and leaderboards.
 - Improving animations and visual effects.
 - Adding sound effects and background music.
-
-Stay tuned for future updates!
